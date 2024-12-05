@@ -1,0 +1,145 @@
+
+div.intro{
+    display: block;
+}
+
+h2.intro-title {
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2; /* Adjust line-height to reduce spacing within the text */
+    margin-top: 16px; /* Reduce margin */
+    margin-bottom: 8px; /* Reduce spacing between this and <hr /> */
+}
+
+hr {
+    margin: 8px 0; /* Reduce spacing above and below the horizontal line */
+    border: 0;
+    border-top: 1px solid #ccc; /* Ensure a visible border */
+}
+
+h1.intro-title {
+    font-family: Inter;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2; /* Adjust line-height for the title */
+    margin-top: 16px; /* Adjust margin to reduce spacing from <hr /> */
+}
+
+.step-container {
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin-top: 64px;
+  }
+  
+  /* Title */
+  .step-title {
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2; /* Adjust line-height to reduce spacing within the text */
+    margin-top: 16px; /* Reduce margin */
+    margin-bottom: 8px; /* Reduce spacing between this and <hr /> */
+  }
+  
+  /* Step Card Styling */
+  .step-card {
+    display: flex;
+    background-color: #f4f5f6; /* Light gray background */
+    padding: 16px;
+    border-radius: 8px;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  /* Icon Section */
+  .step-icon img {
+    width: 48px; /* Adjust icon size */
+    height: 48px;
+  }
+  
+  /* Content Section */
+  .step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .step-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .step-description {
+    font-size: 14px;
+    color: #555555;
+  }
+  
+  .step-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+  
+  .step-list li {
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  /* Tooltip Styling */
+  .step-list li:hover .tooltip {
+    display: block;
+  }
+  
+  .tooltip {
+    display: none;
+    position: absolute;
+    left: 120%; /* Position to the right of the text */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333; /* Dark background for tooltip */
+    color: #ffffff; /* White text */
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Tooltip Arrow */
+  .tooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #333;
+    transform: rotate(45deg);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .step-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .step-icon img {
+      margin-bottom: 16px;
+    }
+  
+    .tooltip {
+      left: 50%;
+      transform: translate(-50%, -150%);
+    }
+  }

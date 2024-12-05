@@ -1,0 +1,52 @@
+.progress {
+    margin-top: 16px;
+    background-color: var(--background-secondary);
+    display: flex;
+    padding: 16px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    height: 94px;
+    border-radius: 8px;
+}
+
+.title {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--text-brand-color);
+}
+
+.subtitle {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--text-primary);
+}
+
+.emp {
+    font-weight: 700;
+}
+
+.progressbar {
+    margin-top: 16px;
+    width: 100%;
+    height: 12px;
+    background-color: var(--background-white); /* Light gray background for the empty bar */
+    border-radius: 4px;
+    position: relative; /* Ensure child element positions correctly */
+    overflow: hidden;
+}
+
+.progressbar-fill {
+    height: 100%;
+    width: 0%; /* Set to 0% when there's no progress */
+    background-color: var(--progress-bar-fill-color, #4caf50); /* Green fill or custom variable */
+    border-radius: 4px;
+    transition: width 0.3s ease; /* Smooth transition for dynamic width */
+}
