@@ -46,7 +46,7 @@
 .progressbar-fill {
     height: 100%;
     width: 0%; /* Set to 0% when there's no progress */
-    background-color: var(--progress-bar-fill-color, #4caf50); /* Green fill or custom variable */
+    background-color: var(--progress-bar-fill-color, #008023); /* Green fill or custom variable */
     border-radius: 4px;
     transition: width 0.3s ease; /* Smooth transition for dynamic width */
 }

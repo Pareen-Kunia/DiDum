@@ -1,145 +1,462 @@
+.mb-0 {
+  margin-bottom: 0rem !important;
+}
 
-div.intro{
-    display: block;
+.mb-1 {
+  margin-bottom: .25rem !important;
+}
+
+.mb-2 {
+  margin-bottom: .5rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.75rem !important;
+}
+
+.mb-4_5 {
+  margin-bottom: 2.3rem !important;
+}
+
+.mb-5
+{
+  margin-bottom: 3rem !important;
+}
+
+
+
+div.intro {
+  display: block;
 }
 
 h2.intro-title {
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2; /* Adjust line-height to reduce spacing within the text */
-    margin-top: 16px; /* Reduce margin */
-    margin-bottom: 8px; /* Reduce spacing between this and <hr /> */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  /* Adjust line-height to reduce spacing within the text */
+  margin-top: 16px;
+  /* Reduce margin */
+  margin-bottom: 8px;
+  /* Reduce spacing between this and <hr /> */
 }
 
 hr {
-    margin: 8px 0; /* Reduce spacing above and below the horizontal line */
-    border: 0;
-    border-top: 1px solid #ccc; /* Ensure a visible border */
+  margin: 8px 0;
+  /* Reduce spacing above and below the horizontal line */
+  border: 0;
+  border-top: 1px solid #ccc;
+  /* Ensure a visible border */
 }
 
 h1.intro-title {
-    font-family: Inter;
-    font-size: 34px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2; /* Adjust line-height for the title */
-    margin-top: 16px; /* Adjust margin to reduce spacing from <hr /> */
+  font-family: Inter;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  /* Adjust line-height for the title */
+  margin-top: 16px;
+  /* Adjust margin to reduce spacing from <hr /> */
 }
 
 .step-container {
-    background-color: #ffffff;
-    font-family: 'Arial', sans-serif;
-    margin-top: 64px;
-  }
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  margin-top: 64px;
+  margin-bottom: 48px;
+}
+
+.step-container-box{
+  background-color: #F4F5F6;
+  border-radius: 12px;
+  height: 52px;
+  padding: 14px;
+  margin-bottom: 16px;
   
-  /* Title */
-  .step-title {
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2; /* Adjust line-height to reduce spacing within the text */
-    margin-top: 16px; /* Reduce margin */
-    margin-bottom: 8px; /* Reduce spacing between this and <hr /> */
-  }
-  
-  /* Step Card Styling */
+}
+
+.step-container-box p.label{
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #1A1A1A;
+  width: 240px;
+  display: inline-block;
+}
+
+.step-container-box p.value{
+  color: var(--Text-primary, #1A1A1A);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: inline-block;
+}
+
+/* Title */
+.step-title {
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  /* Adjust line-height to reduce spacing within the text */
+  margin-top: 16px;
+  /* Reduce margin */
+  margin-bottom: 8px;
+  /* Reduce spacing between this and <hr /> */
+}
+
+/* Step Card Styling */
+.step-card {
+  display: flex;
+  background-color: #f4f5f6;
+  /* Light gray background */
+  padding: 16px;
+  border-radius: 8px;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* Icon Section */
+.step-icon img {
+  width: 48px;
+  /* Adjust icon size */
+  height: 48px;
+}
+
+/* Content Section */
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0px;
+  color: #000000;
+}
+
+.step-description {
+  font-size: 14px;
+  color: #555555;
+}
+
+.step-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.step-list li {
+  position: relative;
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* Tooltip Styling */
+.step-list li:hover .tooltip {
+  display: block;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  left: 120%;
+  /* Position to the right of the text */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  /* Dark background for tooltip */
+  color: #ffffff;
+  /* White text */
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip Arrow */
+.tooltip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #333;
+  transform: rotate(45deg);
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.step-wrapper {
+  padding: 20px;
+  background-color: #f4f5f6;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+}
+.step-wrapper .step-imgbx
+{
+  width: 64px;
+  flex: none;
+}
+.step-wrapper .step-imgbx img
+{
+  width: 100%;
+}
+.align-items-center
+{
+  align-items: center;
+}
+
+.step-text {
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+.step-listing {
+  padding-left: 16px;
+  margin-bottom: 0px;
+}
+
+.step-item {
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.step-listing .step-item:last-child {
+  margin-bottom: 0px;
+}
+
+.hover-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-item .hover-tooltip {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translate(100%, -50%) scale(0.7);
+  opacity: 0;
+  visibility: hidden;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+  padding: 8px;
+  background-color: #393939;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: .3s ease;
+}
+
+.step-item .info-icon:hover~.hover-tooltip {
+  transform: translate(100%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.info-icon {
+  width: 16px;
+  flex: none;
+  cursor: pointer;
+}
+.checkbox-wrapper
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.terms-label
+{
+  font-size: 16px;
+  color: #000;
+}
+.terms-label a
+{
+  color: #d64308;
+}
+.req-text
+{
+  color: #f00;
+}
+.step-button-container
+{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 45px;
+}
+.step-btn
+{
+  padding: 15px;
+  border-radius: 13px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  max-width: 250px;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all .4s;
+}
+.step-btn img
+{
+  width: 23px;
+}
+.get-started
+{
+  border: 1px solid #008023;
+  background-color: #008023;
+  color: #fff;
+}
+.get-started:disabled
+{
+  opacity: .5;
+  cursor: initial;
+}
+.get-started:hover
+{
+  background-color: #034615;
+  border-color: #034615;
+}
+.cancel-btn
+{
+  color: #d64103;
+  border: 1px solid #fbebe6;
+  background-color: #fbebe6;
+}
+.cancel-btn:hover
+{
+  background-color: transparent;
+  border-color: #d64103;
+}
+.back-btn
+{
+  border: 1px solid #363636;
+  background-color: transparent;
+  color: #363636;
+}
+
+.edit-btn
+{
+  border: 1px solid #FBECE6;
+  background-color: #FBECE6;
+  color: #D64309;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.spacer-64 {
+  margin-top: 64px;
+}
+
+.terms-check
+{
+  accent-color: #d64103;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+}
+.field-wrapper
+{
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  border-radius: 13px;
+}
+.field-label
+{
+  font-size: 14px;
+  margin-bottom: 3px;
+  display: block;
+}
+.common-field
+{
+  font-size: 18px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.error-text{
+  color: red
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .step-card {
-    display: flex;
-    background-color: #f4f5f6; /* Light gray background */
-    padding: 16px;
-    border-radius: 8px;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  
-  /* Icon Section */
-  .step-icon img {
-    width: 48px; /* Adjust icon size */
-    height: 48px;
-  }
-  
-  /* Content Section */
-  .step-content {
-    display: flex;
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    text-align: center;
   }
-  
-  .step-heading {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000000;
+
+  .step-icon img {
+    margin-bottom: 16px;
   }
-  
-  .step-description {
-    font-size: 14px;
-    color: #555555;
-  }
-  
-  .step-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-top: 8px;
-  }
-  
-  .step-list li {
-    position: relative;
-    font-size: 14px;
-    margin-bottom: 8px;
-    cursor: pointer;
-  }
-  
-  /* Tooltip Styling */
-  .step-list li:hover .tooltip {
-    display: block;
-  }
-  
+
   .tooltip {
-    display: none;
-    position: absolute;
-    left: 120%; /* Position to the right of the text */
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #333; /* Dark background for tooltip */
-    color: #ffffff; /* White text */
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    z-index: 10;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    transform: translate(-50%, -100%);
   }
-  
-  /* Tooltip Arrow */
-  .tooltip::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -6px;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background-color: #333;
-    transform: rotate(45deg);
+  .step-item .hover-tooltip
+  {
+    top: -7px;
+    transform: translate(50%, -100%) scale(0);
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .step-card {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .step-icon img {
-      margin-bottom: 16px;
-    }
-  
-    .tooltip {
-      left: 50%;
-      transform: translate(-50%, -150%);
-    }
+  .step-item .info-icon:hover~.hover-tooltip
+  {
+    transform: translate(50%, -100%) scale(1);
   }
+  .step-wrapper .step-imgbx
+  {
+    width: 45px;
+  }
+  .step-heading
+  {
+    font-size: 19px;
+  }
+  .step-button-container
+  {
+    flex-direction: column;
+  }
+  .step-btn
+  {
+    width: 100%;
+    max-width: 100%;
+  }
+}
