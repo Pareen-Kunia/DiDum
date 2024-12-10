@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.45a9b7ef.css",
+    "main.js": "/static/js/main.b88b43f2.js",
+    "static/js/453.e09be0b6.chunk.js": "/static/js/453.e09be0b6.chunk.js",
+    "static/media/RealMeLogo.svg": "/static/media/RealMeLogo.fa53030111c5bf5e82855fb37a4a58fe.svg",
+    "static/media/Verified.svg": "/static/media/Verified.bb8c8299f6e0ef40312c0c2bc88f1362.svg",
+    "static/media/Computer.svg": "/static/media/Computer.871c9b24355ae6a95421093ade0f8074.svg",
+    "static/media/Camera.svg": "/static/media/Camera.105ba85f722e5ba094739eae53c73f77.svg",
+    "index.html": "/index.html",
+    "static/media/Information.svg": "/static/media/Information.e5a6a7d6afe167fc72b17f8606750409.svg",
+    "static/media/Leading.svg": "/static/media/Leading.5aacf903acaaeec7655ad741d513c20f.svg",
+    "static/media/BackIcon.svg": "/static/media/BackIcon.f95dad5ab460ef2bc1540c4b451731e9.svg",
+    "static/media/ProceedIcon.svg": "/static/media/ProceedIcon.3ea1943b31fd246846cf6aee2f1c475d.svg",
+    "static/media/Cancel.svg": "/static/media/Cancel.5bb3bc7b045da4041fb71ed4685ec227.svg",
+    "main.45a9b7ef.css.map": "/static/css/main.45a9b7ef.css.map",
+    "main.b88b43f2.js.map": "/static/js/main.b88b43f2.js.map",
+    "453.e09be0b6.chunk.js.map": "/static/js/453.e09be0b6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45a9b7ef.css",
+    "static/js/main.b88b43f2.js"
+  ]
+}
