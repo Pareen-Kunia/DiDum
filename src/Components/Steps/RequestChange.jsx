@@ -6,7 +6,7 @@ import BackButton from "../Buttons/BackButton";
 import { useForm } from "react-hook-form";
 import EditButton from "../Buttons/EditButton";
 
-export const Step4 = ({handleNext, handleBack}) => {
+const RequestChange = ({handleNext, handleBack}) => {
 
     const {
         handleSubmit,
@@ -56,4 +56,4 @@ export const Step4 = ({handleNext, handleBack}) => {
   )
 }
 
-export default Step4;
+export default RequestChange;

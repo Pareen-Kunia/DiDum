@@ -67,15 +67,33 @@ h1.intro-title {
 
 .step-container {
   background-color: #ffffff;
-  font-family: 'Arial', sans-serif;
+  
   margin-top: 64px;
   margin-bottom: 48px;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
+
+.step-container-nospace {
+  background-color: #ffffff;
+  margin-top: 16px;
+  margin-bottom: 48px;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 
 .step-container-box{
   background-color: #F4F5F6;
   border-radius: 12px;
-  height: 52px;
+  min-width: 51px;
+  max-width: 700px;
   padding: 14px;
   margin-bottom: 16px;
   
@@ -91,6 +109,19 @@ h1.intro-title {
   width: 240px;
   display: inline-block;
 }
+
+
+.step-container-box p.label-noblock{
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #1A1A1A;
+  width: 240px;
+  display: inline;
+}
+
 
 .step-container-box p.value{
   color: var(--Text-primary, #1A1A1A);
@@ -115,6 +146,7 @@ h1.intro-title {
   margin-bottom: 8px;
   /* Reduce spacing between this and <hr /> */
 }
+
 
 /* Step Card Styling */
 .step-card {
@@ -294,7 +326,11 @@ h1.intro-title {
 }
 .terms-label
 {
-  font-size: 16px;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   color: #000;
 }
 .terms-label a
@@ -328,6 +364,11 @@ h1.intro-title {
   cursor: pointer;
   text-align: left;
   transition: all .4s;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .step-btn img
 {
@@ -459,4 +500,32 @@ h1.intro-title {
     width: 100%;
     max-width: 100%;
   }
+}
+
+div.info {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  background-color: #E2F6E8;
+  border-radius: 4px;
+  color: #1A1A1A;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 700px;
+  height: 40px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
