@@ -22,7 +22,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-script-url": "off",
+    "no-unused-vars": ["warn"]
+  }
   },
   "browserslist": {
     "production": [
