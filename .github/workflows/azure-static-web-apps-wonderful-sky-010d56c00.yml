@@ -10,35 +10,25 @@ on:
       - main
 
 jobs:
-  build_and_deploy_job:
+  deploy_prebuilt_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
+    name: Deploy Prebuilt Job
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16 # Or the required version
-      - name: Install Dependencies
-        run: npm install
-      - name: Build Application
-        env:
-          CI: false # Disable CI mode
-        run: npm run build
-      - name: Deploy to Azure Static Web Apps
-        id: builddeploy
+      - name: Deploy Prebuilt Build Directory
+        id: deploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_SKY_010D56C00 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/"
-          api_location: ""
-          output_location: "build"
+          app_location: "build" # Point directly to the prebuilt build directory
+          api_location: ""      # If no API, keep empty
+          output_location: ""   # Not required when directly pointing to prebuilt app directory
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
