@@ -89,17 +89,17 @@ h1.intro-title {
 }
 
 
-.step-container-box{
+.step-container-box {
   background-color: #F4F5F6;
   border-radius: 12px;
   min-width: 51px;
   max-width: 700px;
   padding: 14px;
   margin-bottom: 16px;
-  
+
 }
 
-.step-container-box p.label{
+.step-container-box p.label {
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -110,8 +110,7 @@ h1.intro-title {
   display: inline-block;
 }
 
-
-.step-container-box p.label-noblock{
+.step-container-box p.label-noblock {
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -122,8 +121,7 @@ h1.intro-title {
   display: inline;
 }
 
-
-.step-container-box p.value{
+.step-container-box p.value {
   color: var(--Text-primary, #1A1A1A);
   font-family: Inter;
   font-size: 16px;
@@ -132,6 +130,19 @@ h1.intro-title {
   line-height: normal;
   display: inline-block;
 }
+
+@media (max-width: 768px) {
+  .step-container-box p.value {
+    display: block;
+  }
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .step-container-box p.value {
+    display: block;
+  }
+}
+
 
 /* Title */
 .step-title {
@@ -327,7 +338,7 @@ h1.intro-title {
 .terms-label
 {
   font-family: Inter;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -518,6 +529,10 @@ div.info {
   line-height: normal;
   max-width: 700px;
   height: 40px;
+}
+
+.btn-spacer {
+  margin-bottom: 10px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
