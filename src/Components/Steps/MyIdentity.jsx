@@ -20,51 +20,51 @@ const MyIdentity = ({ handleNext, handleBack }) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="intro">
+        <div className="intro1">
           <h2 className="intro-title" style={{ marginTop: 60 }}>Aku taipitopito tuakiri hāpono</h2>
           <hr />
           <h1 className="intro-title">My verified identity details</h1>
 
-          <div className="step-container">
-            <div className="step-container-details">
+          <div className="step-container1">
+            <div className="step-container-details1">
               <div className="step-container-box">
                 <p className="label">Full name</p>
-                <p className="value">Frank Abagnale</p>
+                <p className="value1">Frank Abagnale</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Date of birth</p>
-                <p className="value">27 April 1948</p>
+                <p className="value1">27 April 1948</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Place of birth</p>
-                <p className="value">Auckland, New Zealand</p>
+                <p className="value1">Auckland, New Zealand</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Gender</p>
-                <p className="value">Male</p>
+                <p className="value1">Male</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Status</p>
-                <p className="value">Active</p>
+                <p className="value1">Active</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Expiry date</p>
-                <p className="value">03 July 2025</p>
+                <p className="value1">03 July 2025</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Gender</p>
-                <p className="value">Male</p>
+                <p className="value1">Male</p>
               </div>
               <label className="terms-label" htmlFor="terms-checkbox">
                 Use options below to update your name or gender. To correct any other details, <a href='https://www.realme.govt.nz/contact-us/'>contact us</a>.
               </label>
             </div>
             <div>
-            <div className="image-container">
+            <div className="image-container1">
               <center><CustomEditButton icon={LoadImageIcon} text={"View Image"} type="button" /></center>
             </div>
             
-            <div className="image-container-text">
+            <div className="image-container-text1">
               <h3 className="step-title mb-2">Your identity image</h3>
               <p >This image was captured during your application. See the terms of use for how we'll use this image.</p>
             </div>

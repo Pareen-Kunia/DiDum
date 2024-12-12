@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.090fb171.css",
-    "main.js": "/static/js/main.227e368b.js",
+    "main.css": "/static/css/main.2f8d8938.css",
+    "main.js": "/static/js/main.0d6a725a.js",
     "static/js/453.e09be0b6.chunk.js": "/static/js/453.e09be0b6.chunk.js",
     "static/media/RealMeLogo.svg": "/static/media/RealMeLogo.fa53030111c5bf5e82855fb37a4a58fe.svg",
     "static/media/Verified.svg": "/static/media/Verified.bb8c8299f6e0ef40312c0c2bc88f1362.svg",
@@ -17,12 +17,12 @@
     "static/media/Info.svg": "/static/media/Info.fc4d62407b50ae6757bc6da75b00cc36.svg",
     "static/media/BrandedInfo.svg": "/static/media/BrandedInfo.f1cb02d22c42489339c03eb9b0fd06a2.svg",
     "static/media/LoadImage.svg": "/static/media/LoadImage.5a1b08b55ac1765e8e458ce16681deee.svg",
-    "main.090fb171.css.map": "/static/css/main.090fb171.css.map",
-    "main.227e368b.js.map": "/static/js/main.227e368b.js.map",
+    "main.2f8d8938.css.map": "/static/css/main.2f8d8938.css.map",
+    "main.0d6a725a.js.map": "/static/js/main.0d6a725a.js.map",
     "453.e09be0b6.chunk.js.map": "/static/js/453.e09be0b6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.090fb171.css",
-    "static/js/main.227e368b.js"
+    "static/css/main.2f8d8938.css",
+    "static/js/main.0d6a725a.js"
   ]
 }
