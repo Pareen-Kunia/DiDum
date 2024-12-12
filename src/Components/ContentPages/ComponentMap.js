@@ -21,6 +21,7 @@ import RenewIdentity from "../Steps/RenewIdentity";
 import MyIdentity from "../Steps/MyIdentity";
 
 const steps = {
+  "/": { component: Step1, progress: 5, showProgress: true },
   "/step1": { component: Step1, progress: 5, showProgress: true },
   "/step2": { component: Step2, progress: 10, showProgress: true },
   "/passport": { component: Passport, progress: 15, showProgress: true },
