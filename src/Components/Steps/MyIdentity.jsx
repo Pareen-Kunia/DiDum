@@ -29,31 +29,31 @@ const MyIdentity = ({ handleNext, handleBack }) => {
             <div className="step-container-details1">
               <div className="step-container-box">
                 <p className="label">Full name</p>
-                <p className="value1">Frank Abagnale</p>
+                <p className="value">Frank Abagnale</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Date of birth</p>
-                <p className="value1">27 April 1948</p>
+                <p className="value">27 April 1948</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Place of birth</p>
-                <p className="value1">Auckland, New Zealand</p>
+                <p className="value">Auckland, New Zealand</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Gender</p>
-                <p className="value1">Male</p>
+                <p className="value">Male</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Status</p>
-                <p className="value1">Active</p>
+                <p className="value">Active</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Expiry date</p>
-                <p className="value1">03 July 2025</p>
+                <p className="value">03 July 2025</p>
               </div>
               <div className="step-container-box">
                 <p className="label">Gender</p>
-                <p className="value1">Male</p>
+                <p className="value">Male</p>
               </div>
               <label className="terms-label" htmlFor="terms-checkbox">
                 Use options below to update your name or gender. To correct any other details, <a href='https://www.realme.govt.nz/contact-us/'>contact us</a>.
