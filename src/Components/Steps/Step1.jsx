@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 // import Progress from "../Progress";
 import "../ContentPages/style.css";
 import Verified from "../../assets/images/Verified.svg";
@@ -20,6 +20,18 @@ export const Step1 = ({handleNext,handleCancel}) => {
     console.log(data);
     handleNext();
   };
+
+  useEffect(() => {
+    fetch("/api/contactdetails",{
+      method: 'GET',
+      credentials: 'include', // Include the auth_token cookie
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+
+  }, []);
+
+
   return (
     <>
     <form onSubmit={handleSubmit(onSubmit)}>
