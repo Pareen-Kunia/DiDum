@@ -9,12 +9,12 @@ export const useIdleTimeout = () => {
 };
 
 export const IdleTimeoutProvider = ({ children }) => {
-  const token = localStorage.getItem('token') || "mySecretKey123" 
 
   const timeoutDuration = parseInt(process.env.REACT_APP_TIMEOUT) || 1800000; 
   const [isIdle, setIsIdle] = useState(false);
   const [lastActiveTime, setLastActiveTime] = useState(Date.now());
   const navigate = useNavigate();
+  const token = localStorage.getItem('token') || "mySecretKey123";
 
   
   const resetIdleTimer = useCallback(() => {
@@ -56,33 +56,28 @@ export const IdleTimeoutProvider = ({ children }) => {
       let res = await axios.post("http://localhost:3001/api/check-session", {}, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
-      if (!res) {
-        handleNavigationError("Backend unreachable, navigating to error page.");
-        return true;
-      }
   
-      if (res.status === 200) { 
-        return res.data.expired;  
+      if (res.status === 200) {
+        return res.data.expired;
       }
     } catch (error) {
       console.error("Error checking backend session:", error);
   
-      if (error.response) {  
-        if (error.response.status === 401) {  
-          console.warn("Unauthorized session, logging out user.");
-          await loggingOutTheUser(); 
-        }else if (error.response.status === 404) {
-          console.warn("API endpoint not found, redirecting to error page.");
-          handleNavigationError("API endpoint not found.");
+      if (error.response) {
+        const status = error.response.status;
+        if (status >= 400) {
+          console.warn(`API error ${status}, redirecting to error page.`);
+          handleNavigationError(`Error ${status}: Navigating to error page.`);
         }
-      } else { 
+      } else {
         console.warn("Network/server error, navigating to error page.");
         handleNavigationError("Network/server error.");
       }
+      
   
-      return true; 
+      return true;
     }
-  };
+  };  
 
   const loggingOutTheUser = async () => {
     try {
@@ -118,9 +113,9 @@ export const IdleTimeoutProvider = ({ children }) => {
     const idleCheckInterval = setInterval(checkIdleStatus, 300000); 
 
 
-  if (isIdle) {
-    clearInterval(idleCheckInterval);
-  }
+  // if (isIdle) {
+  //   clearInterval(idleCheckInterval);
+  // }
 
     return () => clearInterval(idleCheckInterval);
   }, [checkIdleStatus]); 
@@ -128,11 +123,9 @@ export const IdleTimeoutProvider = ({ children }) => {
   useEffect(() => {
     if (isIdle && window.location.pathname !== '/session-timeout') {
       console.log('Navigating to /session-timeout due to idle timeout.');
-      if (window.location.pathname !== '/session-timeout') {
-        navigate("/session-timeout");
-      }
+      navigate("/session-timeout");
     }
-  }, [isIdle, navigate]); 
+  }, [isIdle, navigate]);  
 
   return (
     <IdleTimeoutContext.Provider value={{ isIdle }}>
