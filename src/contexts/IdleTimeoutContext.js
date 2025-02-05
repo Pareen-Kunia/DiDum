@@ -9,10 +9,9 @@ export const useIdleTimeout = () => {
 };
 
 export const IdleTimeoutProvider = ({ children }) => {
-  console.log(process.env.REACT_APP_TIMEOUT);
   const token = localStorage.getItem('token') || "mySecretKey123" 
 
-  const timeoutDuration = parseInt(process.env.REACT_APP_TIMEOUT) || 300000; // Default 30 minutes
+  const timeoutDuration = parseInt(process.env.REACT_APP_TIMEOUT) || 1800000; 
   const [isIdle, setIsIdle] = useState(false);
   const [lastActiveTime, setLastActiveTime] = useState(Date.now());
   const navigate = useNavigate();
@@ -116,7 +115,7 @@ export const IdleTimeoutProvider = ({ children }) => {
   }, [handleUserActivity]);
 
   useEffect(() => {
-    const idleCheckInterval = setInterval(checkIdleStatus, 50000); 
+    const idleCheckInterval = setInterval(checkIdleStatus, 300000); 
 
 
   if (isIdle) {

@@ -1,10 +1,12 @@
 import express from 'express';
 import NodeCache from 'node-cache';
 import cors from 'cors';
+import 'dotenv/config';
+
 
 const app = express();
-const mycache = new NodeCache({ stdTTL: 600, checkperiod: 1200 });
-const BACKEND_TIMEOUT = 40000;
+const mycache = new NodeCache({ stdTTL: 2700, checkperiod: 2400 });
+const BACKEND_TIMEOUT = parseInt(process.env.REACT_BACKEND_TIMEOUT) || 40000;
 
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:3000' }));
@@ -33,6 +35,21 @@ app.post('/api/login', (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
+app.get('/api/get-cache', (req, res) => {
+    try{
+        const token = req.headers.authorization;
+        console.log(mycache.get(token))
+        res.json({
+            message: "done successfully!"
+        })
+    }catch(error){
+        res.json({
+            message: "error occured"
+        })
+
+    }
+})
 
 app.post('/api/check-session', (req, res) => {
     try {
@@ -65,10 +82,8 @@ app.post('/api/logout', (req, res) => {
             return res.status(400).json({ error: 'Authorization token is required' });
         }
 
-        const deleted = mycache.del(token);
-        if (deleted === 0) {
-            return res.status(404).json({ error: 'Session not found or already expired' });
-        }
+        console.log("Inside logout")
+
 
         res.json({ success: true, message: 'Logout successful' });
     } catch (error) {
