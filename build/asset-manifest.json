@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.619f27b5.css",
-    "main.js": "/static/js/main.5fc80cbf.js",
+    "main.js": "/static/js/main.ad47f8fa.js",
     "static/js/453.e09be0b6.chunk.js": "/static/js/453.e09be0b6.chunk.js",
     "static/media/RealMeLogo.svg": "/static/media/RealMeLogo.fa53030111c5bf5e82855fb37a4a58fe.svg",
     "static/media/Verified.svg": "/static/media/Verified.bb8c8299f6e0ef40312c0c2bc88f1362.svg",
@@ -18,11 +18,11 @@
     "static/media/BrandedInfo.svg": "/static/media/BrandedInfo.f1cb02d22c42489339c03eb9b0fd06a2.svg",
     "static/media/LoadImage.svg": "/static/media/LoadImage.5a1b08b55ac1765e8e458ce16681deee.svg",
     "main.619f27b5.css.map": "/static/css/main.619f27b5.css.map",
-    "main.5fc80cbf.js.map": "/static/js/main.5fc80cbf.js.map",
+    "main.ad47f8fa.js.map": "/static/js/main.ad47f8fa.js.map",
     "453.e09be0b6.chunk.js.map": "/static/js/453.e09be0b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.619f27b5.css",
-    "static/js/main.5fc80cbf.js"
+    "static/js/main.ad47f8fa.js"
   ]
 }

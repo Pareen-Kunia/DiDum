@@ -19,9 +19,11 @@ import SavedApplication from "../Steps/SavedApplication";
 import PendingVerification from "../Steps/PendingVerification";
 import RenewIdentity from "../Steps/RenewIdentity";
 import MyIdentity from "../Steps/MyIdentity";
+import Inactive from "../Steps/Inactivity";
 
 const steps = {
   "/": { component: Step1, progress: 5, showProgress: true },
+  "/dashboard": { component: Step1, progress: 5, showProgress: true },
   "/step1": { component: Step1, progress: 5, showProgress: true },
   "/step2": { component: Step2, progress: 10, showProgress: true },
   "/passport": { component: Passport, progress: 15, showProgress: true },
@@ -43,6 +45,7 @@ const steps = {
   "/pending-verification": { component: PendingVerification, progress: 95, showProgress: true },
   "/renew-identity": { component: RenewIdentity, progress: 100, showProgress: true },
   "/my-identity": { component: MyIdentity, progress: 100, showProgress: false },
+  "/session-timeout": { component: Inactive, progress: 5, showProgress: false },
 };
 
 export default steps;

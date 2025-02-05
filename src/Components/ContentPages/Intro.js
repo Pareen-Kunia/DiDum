@@ -7,7 +7,7 @@ import "./style.css";
 export default function Intro() {
   const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
-  const [showProgress, setShowProgress] = useState(true);
+  const [showProgress, setShowProgress] = useState(false);
   
 
   useEffect(() => {
