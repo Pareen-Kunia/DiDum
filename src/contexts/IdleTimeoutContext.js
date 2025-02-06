@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useContext, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import clearSession from '../utils/clearSession';
 
 const IdleTimeoutContext = createContext();
 
@@ -14,7 +15,6 @@ export const IdleTimeoutProvider = ({ children }) => {
   const [isIdle, setIsIdle] = useState(false);
   const [lastActiveTime, setLastActiveTime] = useState(Date.now());
   const navigate = useNavigate();
-  const token = localStorage.getItem('token') || "mySecretKey123";
 
   
   const resetIdleTimer = useCallback(() => {
@@ -24,21 +24,20 @@ export const IdleTimeoutProvider = ({ children }) => {
 
   
   const checkIdleStatus = useCallback(async () => {
+
+    if(window.location.pathname === '/error' || window.location.pathname === '/session-timeout') return;
+
     const idleTime = Date.now() - lastActiveTime;
-    console.log(`Idle check: ${idleTime}ms passed.`);
   
     if (idleTime > timeoutDuration && !isIdle) {
       const isSessionExpired = await checkBackendIdleStatus();
   
       if (isSessionExpired && !isIdle) {
         
-        if (!isIdle) {
-          console.log("inside isidle")
           const isLoggedOut = await loggingOutTheUser();
           if (isLoggedOut) {
             setIsIdle(true);
-            console.log(`Idle is set to true`);
-          }
+          
         }
       } else {
         setLastActiveTime(Date.now());
@@ -46,51 +45,57 @@ export const IdleTimeoutProvider = ({ children }) => {
     }
   }, [lastActiveTime, timeoutDuration, isIdle]); 
   
-  const handleNavigationError = (message) => {
+  const handleNavigationError = async (message) => {
     console.warn(message);
     navigate("/error");
   };
 
   const checkBackendIdleStatus = async () => {
     try {
-      let res = await axios.post("http://localhost:3001/api/check-session", {}, {
+      const token = localStorage.getItem('token');
+      if (!token) {
+          console.warn("No token found, assuming session expired.");
+          return true; 
+      }
+
+      let res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/check-session`, {}, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
-  
-      if (res.status === 200) {
-        return res.data.expired;
-      }
+
+      return res.data.expired;
     } catch (error) {
-      console.error("Error checking backend session:", error);
-  
-      if (error.response) {
-        const status = error.response.status;
-        if (status >= 400) {
-          console.warn(`API error ${status}, redirecting to error page.`);
-          handleNavigationError(`Error ${status}: Navigating to error page.`);
-        }
-      } else {
-        console.warn("Network/server error, navigating to error page.");
-        handleNavigationError("Network/server error.");
-      }
-      
-  
-      return true;
+
+      console.error("Request failed:", error.response?.statusText || error.message);
+
+      clearSession();
+
+      await loggingOutTheUser();
+
+      await handleNavigationError(`Error : Navigating to error page.`);
+      return false;
     }
-  };  
+  };
+
 
   const loggingOutTheUser = async () => {
     try {
-      let res = await axios.post("http://localhost:3001/api/logout", {}, {
+      const token = localStorage.getItem('token');
+        if (!token) {
+            console.warn("No token found during logout.");
+            return true; 
+        }
+
+      let res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/logout`, {}, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
-  
-      if (res.status === 200) {
         return res.data.success;
-      }
+
     } catch (error) {
       console.error("Error logging out user:", error);
-      handleNavigationError("Error logging out user.");
+
+      clearSession();
+      await handleNavigationError(`Error : Navigating to error page.`);
+      
       return false;
     }
   };
@@ -110,18 +115,15 @@ export const IdleTimeoutProvider = ({ children }) => {
   }, [handleUserActivity]);
 
   useEffect(() => {
+    
     const idleCheckInterval = setInterval(checkIdleStatus, 300000); 
-
-
-  // if (isIdle) {
-  //   clearInterval(idleCheckInterval);
-  // }
 
     return () => clearInterval(idleCheckInterval);
   }, [checkIdleStatus]); 
 
   useEffect(() => {
     if (isIdle && window.location.pathname !== '/session-timeout') {
+      clearSession(); 
       console.log('Navigating to /session-timeout due to idle timeout.');
       navigate("/session-timeout");
     }
@@ -133,3 +135,4 @@ export const IdleTimeoutProvider = ({ children }) => {
     </IdleTimeoutContext.Provider>
   );
 };
+ 

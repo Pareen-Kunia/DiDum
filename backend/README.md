@@ -194,6 +194,18 @@ Any invalid route will return a 404 Not Found error with the following response:
 
 The cache is managed using node-cache. It stores session tokens with a TTL (time-to-live) of 2700 seconds (45 minutes). The cache is checked every 2400 seconds (40 minutes). Sessions are considered expired if they exceed the defined timeout (set via REACT_BACKEND_TIMEOUT).
 
+### Environment Variable Configuration
+
+Make sure to create a .env file. Refer the .env.sample file for reference
+```bash
+.env 
+REACT_APP_TIMEOUT=YOUR-BACKEND-TIMEOUT-DURATION
+PORT=YOUR-BACKEND-PORT
+REACT_FRONTEND_URL=YOUR-FRONTEND-URL
+```
+
+
+
 
 
 
